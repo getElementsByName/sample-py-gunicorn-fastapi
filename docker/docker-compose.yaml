@@ -1,0 +1,12 @@
+version: '3'
+services:
+    main:
+        container_name: main
+        build:
+            context: $PWD
+            dockerfile: ./docker/Dockerfile
+        image: sample-py-cunicorn-fastapi-main:local
+        ports:
+        - "8000:8000"
+        volumes:
+        - $PWD:/workspace/app

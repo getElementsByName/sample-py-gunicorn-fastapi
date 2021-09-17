@@ -1,0 +1,353 @@
+[2021-09-15 15:42:07 +0900] [62383] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /Users/user/workspaces/test/sample-py-gunicorn-fastapi
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 20
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: ./logs/gunicorn.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: unix:///var/run/syslog
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: main:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fb26d9c24c0>
+  on_reload: <function OnReload.on_reload at 0x7fb26d9c25e0>
+  when_ready: <function WhenReady.when_ready at 0x7fb26d9c2700>
+  pre_fork: <function Prefork.pre_fork at 0x7fb26d9c2820>
+  post_fork: <function Postfork.post_fork at 0x7fb26d9c2940>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fb26d9c2a60>
+  worker_int: <function WorkerInt.worker_int at 0x7fb26d9c2b80>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fb26d9c2ca0>
+  pre_exec: <function PreExec.pre_exec at 0x7fb26d9c2dc0>
+  pre_request: <function PreRequest.pre_request at 0x7fb26d9c2ee0>
+  post_request: <function PostRequest.post_request at 0x7fb26d9c2f70>
+  child_exit: <function ChildExit.child_exit at 0x7fb26db070d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fb26db071f0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fb26db07310>
+  on_exit: <function OnExit.on_exit at 0x7fb26db07430>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2021-09-15 15:42:07 +0900] [62383] [INFO] Starting gunicorn 20.1.0
+[2021-09-15 15:42:07 +0900] [62383] [DEBUG] Arbiter booted
+[2021-09-15 15:42:07 +0900] [62383] [INFO] Listening at: http://0.0.0.0:8000 (62383)
+[2021-09-15 15:42:07 +0900] [62383] [INFO] Using worker: sync
+[2021-09-15 15:42:07 +0900] [62395] [INFO] Booting worker with pid: 62395
+[2021-09-15 15:42:07 +0900] [62396] [INFO] Booting worker with pid: 62396
+[2021-09-15 15:42:07 +0900] [62383] [DEBUG] 2 workers
+[2021-09-15 15:42:15 +0900] [62396] [DEBUG] GET /
+[2021-09-15 15:42:15 +0900] [62396] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/Users/user/opt/anaconda3/envs/py38/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 136, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/user/opt/anaconda3/envs/py38/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 179, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+TypeError: __call__() missing 1 required positional argument: 'send'
+[2021-09-15 15:42:15 +0900] [62395] [DEBUG] GET /favicon.ico
+[2021-09-15 15:42:15 +0900] [62395] [ERROR] Error handling request /favicon.ico
+Traceback (most recent call last):
+  File "/Users/user/opt/anaconda3/envs/py38/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 136, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/user/opt/anaconda3/envs/py38/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 179, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+TypeError: __call__() missing 1 required positional argument: 'send'
+[2021-09-15 15:42:39 +0900] [62395] [DEBUG] GET /
+[2021-09-15 15:42:39 +0900] [62395] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/Users/user/opt/anaconda3/envs/py38/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 136, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/user/opt/anaconda3/envs/py38/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 179, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+TypeError: __call__() missing 1 required positional argument: 'send'
+[2021-09-15 15:42:39 +0900] [62396] [DEBUG] GET /favicon.ico
+[2021-09-15 15:42:39 +0900] [62396] [ERROR] Error handling request /favicon.ico
+Traceback (most recent call last):
+  File "/Users/user/opt/anaconda3/envs/py38/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 136, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/user/opt/anaconda3/envs/py38/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 179, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+TypeError: __call__() missing 1 required positional argument: 'send'
+[2021-09-15 15:43:40 +0900] [62383] [INFO] Handling signal: int
+[2021-09-15 15:43:40 +0900] [62395] [INFO] Worker exiting (pid: 62395)
+[2021-09-15 15:43:40 +0900] [62396] [INFO] Worker exiting (pid: 62396)
+[2021-09-15 15:43:40 +0900] [62383] [INFO] Shutting down: Master
+[2021-09-15 15:44:28 +0900] [66414] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /Users/user/workspaces/test/sample-py-gunicorn-fastapi
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 20
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: ./logs/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: unix:///var/run/syslog
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: main:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fb87c0ef4c0>
+  on_reload: <function OnReload.on_reload at 0x7fb87c0ef5e0>
+  when_ready: <function WhenReady.when_ready at 0x7fb87c0ef700>
+  pre_fork: <function Prefork.pre_fork at 0x7fb87c0ef820>
+  post_fork: <function Postfork.post_fork at 0x7fb87c0ef940>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fb87c0efa60>
+  worker_int: <function WorkerInt.worker_int at 0x7fb87c0efb80>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fb87c0efca0>
+  pre_exec: <function PreExec.pre_exec at 0x7fb87c0efdc0>
+  pre_request: <function PreRequest.pre_request at 0x7fb87c0efee0>
+  post_request: <function PostRequest.post_request at 0x7fb87c0eff70>
+  child_exit: <function ChildExit.child_exit at 0x7fb87c2050d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fb87c2051f0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fb87c205310>
+  on_exit: <function OnExit.on_exit at 0x7fb87c205430>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2021-09-15 15:44:28 +0900] [66414] [INFO] Starting gunicorn 20.1.0
+[2021-09-15 15:44:28 +0900] [66414] [DEBUG] Arbiter booted
+[2021-09-15 15:44:28 +0900] [66414] [INFO] Listening at: http://0.0.0.0:8000 (66414)
+[2021-09-15 15:44:28 +0900] [66414] [INFO] Using worker: sync
+[2021-09-15 15:44:28 +0900] [66417] [INFO] Booting worker with pid: 66417
+[2021-09-15 15:44:28 +0900] [66418] [INFO] Booting worker with pid: 66418
+[2021-09-15 15:44:28 +0900] [66414] [DEBUG] 2 workers
+[2021-09-15 15:44:30 +0900] [66418] [DEBUG] GET /
+[2021-09-15 15:44:30 +0900] [66418] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/Users/user/opt/anaconda3/envs/py38/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 136, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/user/opt/anaconda3/envs/py38/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 179, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+TypeError: __call__() missing 1 required positional argument: 'send'
+[2021-09-15 15:44:31 +0900] [66417] [DEBUG] GET /favicon.ico
+[2021-09-15 15:44:31 +0900] [66417] [ERROR] Error handling request /favicon.ico
+Traceback (most recent call last):
+  File "/Users/user/opt/anaconda3/envs/py38/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 136, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/user/opt/anaconda3/envs/py38/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 179, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+TypeError: __call__() missing 1 required positional argument: 'send'
+[2021-09-15 15:44:37 +0900] [66414] [INFO] Handling signal: int
+[2021-09-15 15:44:37 +0900] [66417] [INFO] Worker exiting (pid: 66417)
+[2021-09-15 15:44:37 +0900] [66418] [INFO] Worker exiting (pid: 66418)
+[2021-09-15 15:44:37 +0900] [66414] [INFO] Shutting down: Master
+[2021-09-15 15:45:25 +0900] [68000] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /Users/user/workspaces/test/sample-py-gunicorn-fastapi
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 20
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: ./logs/gunicorn.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: unix:///var/run/syslog
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: main:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fb46d78e4c0>
+  on_reload: <function OnReload.on_reload at 0x7fb46d78e5e0>
+  when_ready: <function WhenReady.when_ready at 0x7fb46d78e700>
+  pre_fork: <function Prefork.pre_fork at 0x7fb46d78e820>
+  post_fork: <function Postfork.post_fork at 0x7fb46d78e940>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fb46d78ea60>
+  worker_int: <function WorkerInt.worker_int at 0x7fb46d78eb80>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fb46d78eca0>
+  pre_exec: <function PreExec.pre_exec at 0x7fb46d78edc0>
+  pre_request: <function PreRequest.pre_request at 0x7fb46d78eee0>
+  post_request: <function PostRequest.post_request at 0x7fb46d78ef70>
+  child_exit: <function ChildExit.child_exit at 0x7fb46d7a30d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fb46d7a31f0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fb46d7a3310>
+  on_exit: <function OnExit.on_exit at 0x7fb46d7a3430>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2021-09-15 15:45:25 +0900] [68000] [INFO] Starting gunicorn 20.1.0
+[2021-09-15 15:45:25 +0900] [68000] [DEBUG] Arbiter booted
+[2021-09-15 15:45:25 +0900] [68000] [INFO] Listening at: http://0.0.0.0:8000 (68000)
+[2021-09-15 15:45:25 +0900] [68000] [INFO] Using worker: sync
+[2021-09-15 15:45:25 +0900] [68002] [INFO] Booting worker with pid: 68002
+[2021-09-15 15:45:25 +0900] [68000] [DEBUG] 1 workers
+[2021-09-15 15:45:27 +0900] [68002] [DEBUG] GET /
+[2021-09-15 15:45:27 +0900] [68002] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/Users/user/opt/anaconda3/envs/py38/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 136, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/user/opt/anaconda3/envs/py38/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 179, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+TypeError: __call__() missing 1 required positional argument: 'send'
+[2021-09-15 15:45:27 +0900] [68002] [DEBUG] GET /favicon.ico
+[2021-09-15 15:45:27 +0900] [68002] [ERROR] Error handling request /favicon.ico
+Traceback (most recent call last):
+  File "/Users/user/opt/anaconda3/envs/py38/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 136, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/user/opt/anaconda3/envs/py38/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 179, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+TypeError: __call__() missing 1 required positional argument: 'send'
+[2021-09-15 15:45:34 +0900] [68000] [INFO] Handling signal: int
+[2021-09-15 15:45:34 +0900] [68002] [INFO] Worker exiting (pid: 68002)
+[2021-09-15 15:45:34 +0900] [68000] [INFO] Shutting down: Master
